@@ -15,11 +15,19 @@
     />
     <button
       class="text-color-primary"
-      :on-press="handleButton"
+      :on-press="logIn"
       title="myButton"
       color="#841584"
       accessibility-label="Learn more about this purple button"
     />
+    <button
+      class="text-color-primary"
+      :on-press="Another"
+      title="myButton"
+      color="#841584"
+      accessibility-label="Learn more about this purple button"
+    />
+    
     <!-- <text-input :style="{height: 40, borderColor: 'gray', borderWidth: 1}" v-model="text"/> -->
   </view>
 </template>
@@ -38,9 +46,12 @@ export default {
     };
   },
   methods: {
-    handleButton() {
+    logIn() {
       // this.myInput = "Button clicked!";
-      this.navigation.navigate("Another");
+      this.navigation.navigate("Main");
+    },
+    another() {
+      this.navigation.navigate("Another")
     }
   }
 };
