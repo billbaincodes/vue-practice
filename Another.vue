@@ -1,34 +1,27 @@
 <template>
   <nb-container>
-    <nb-header/>
-    <nb-content padder>
-      <nb-badge>
-          <nb-text>2</nb-text>
-      </nb-badge>
-      <nb-badge primary>
-          <nb-text>2</nb-text>
-      </nb-badge>
-      <nb-badge success>
-          <nb-text>2</nb-text>
-      </nb-badge>
-      <nb-badge info>
-          <nb-text>5</nb-text>
-      </nb-badge>
-      <nb-badge warning>
-          <nb-text>2</nb-text>
-      </nb-badge>
-      <nb-badge danger>
-          <nb-text>2</nb-text>
-      </nb-badge>
-      <nb-badge primary>
-          <nb-icon name="star" class="icon-star" />
-      </nb-badge>
-      <nb-badge class="badge-custom-bg">
-          <nb-text>1866</nb-text>
-      </nb-badge>
-    </nb-content>
+    <nb-header hasTabs/>
+    <nb-tabs>
+      <nb-tab heading="Profile">
+        <tab-one />
+      </nb-tab>
+      <nb-tab heading="Run">
+        <tab-two />
+      </nb-tab>
+      <nb-tab heading="Music">
+        <tab-three />
+      </nb-tab>
+    </nb-tabs>
   </nb-container>
 </template>
+<script>
+import TabOne from "./components/tabOne";
+import TabTwo from "./components/tabTwo";
+import TabThree from "./components/tabThree";
+export default {
+  components: { TabOne, TabTwo, TabThree }
+};
+</script>
 
 
 

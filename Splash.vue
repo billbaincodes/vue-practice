@@ -7,7 +7,7 @@
       :style="{height: 40, width: 300, borderColor: 'gray', borderWidth: 1}"
       v-model="myInput"
     />
-    <text class="text-color-primary">Email:</text>
+    <text class="text-color-primary">Password:</text>
     <text-input
       class="text-color-primary"
       :style="{height: 40, width: 300, borderColor: 'gray', borderWidth: 1}"
@@ -20,15 +20,6 @@
       color="#841584"
       accessibility-label="Learn more about this purple button"
     />
-    <button
-      class="text-color-primary"
-      :on-press="Another"
-      title="myButton"
-      color="#841584"
-      accessibility-label="Learn more about this purple button"
-    />
-    
-    <!-- <text-input :style="{height: 40, borderColor: 'gray', borderWidth: 1}" v-model="text"/> -->
   </view>
 </template>
 
@@ -48,10 +39,7 @@ export default {
   methods: {
     logIn() {
       // this.myInput = "Button clicked!";
-      this.navigation.navigate("Main");
-    },
-    another() {
-      this.navigation.navigate("Another")
+      this.navigation.navigate("Another");
     }
   }
 };
