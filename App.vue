@@ -1,6 +1,8 @@
 
 <template>
-  <app-navigation></app-navigation>
+  <view>
+    <tab-nav></tab-nav>
+  </view>
 </template>
 
 <script>
@@ -10,27 +12,33 @@ import { VueNativeBase } from "native-base";
 // registering all native-base components to the global scope of the Vue
 Vue.use(VueNativeBase);
 
+import { TabNavigator, TabBarBottom, StackNavigator } from "vue-native-router";
+import SplashScreen from "./Splash.vue";
+import MainScreen from "./Main.vue";
+import AnotherScreen from "./Another.vue";
+import HomeScreen from "./screens/HomeScreen.js";
+import LinksScreen from "./screens/LinksScreen.js";
+import SettingsScreen from "./screens/SettingsScreen.js";
 
-
-import { StackNavigator } from "vue-native-router";
-import SplashScreen from './Splash.vue'
-import MainScreen from './Main.vue'
-import AnotherScreen from './Another.vue'
-
-const AppNavigation = StackNavigator(
+const tabNav = TabNavigator(
   {
-    Main: MainScreen,
-    Splash: SplashScreen,
-    Another: AnotherScreen
+    Home: HomeScreen,
+    Settings: SettingsScreen
   },
   {
-    initialRouteName: 'Splash'
+    tabBarPosition: "bottom",
+    tabBarComponent: TabBarBottom
   }
 );
 
 export default {
-    components: { AppNavigation }
-}
+  beforeCreate() {
+    console.log("butts");
+  },
+  components: {
+    tabNav
+  }
+};
 </script>
 
 <style>
